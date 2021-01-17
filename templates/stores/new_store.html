@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <head><h1>Create Store</h1></head>
+    <section class="create-store-form">
+        <form method="post">
+             <div class="form-group">
+                <label for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="name" placeholder="John Lewis">
+            </div><!-- action="/" -->
+            <div class="form-group">
+                <label for="url_prefix">URL Prefix</label>
+                <input class="form-control" type="text" id="url_prefix" name="url_prefix">
+                <small class="form-text text-muted" id="urlPrefixtHelp">
+                    What URL will all its items to start with?
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="tag_name">HTML Tag Name</label>
+                <input type="text" class="form-control" id="tag_name" name="tag_name"  aria-describedby="html_tagHelp">
+                <small class="form-text text-muted" id="tag_nameHelp">
+                    What HTLM tag contains the price information for items in this store?
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="query">HTLM Query</label>
+                <input type="text" class="form-control" id="query" name="query" placeholder='"{"class": "price price--large"}"' aria-describedby="queryHelp">
+                <small class="form-text text-muted" id="queryHelp">
+                    What attributes are the element that contain the price? This so we can find it on the page
+                </small>
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </section>
+{% endblock %}
